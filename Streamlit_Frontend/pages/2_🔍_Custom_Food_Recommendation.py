@@ -4,11 +4,12 @@ from ImageFinder.ImageFinder import get_images_links as find_image
 import pandas as pd
 from streamlit_echarts import st_echarts
 
+st.set_page_config(page_title="Custom Food Recommendation", page_icon="🔍",layout="wide")
+
 options = ["No", "Yes"]
 feeling_today = st.selectbox("Do you have a Personal Nutritionist?", options)
 
 if feeling_today == "Yes":
-    st.set_page_config(page_title="Custom Food Recommendation", page_icon="🔍",layout="wide")
     nutrition_values=['Calories','FatContent','SaturatedFatContent','CholesterolContent','SodiumContent','CarbohydrateContent','FiberContent','SugarContent','ProteinContent']
     if 'generated' not in st.session_state:
         st.session_state.generated = False
