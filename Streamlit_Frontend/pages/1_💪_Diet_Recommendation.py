@@ -84,9 +84,9 @@ class Person:
 
 class Display:
     def __init__(self):
-        self.plans=["Maintain weight","Mild weight loss","Weight loss","Extreme weight loss"]
-        self.weights=[1,0.9,0.8,0.6]
-        self.losses=['-0 kg/week','-0.25 kg/week','-0.5 kg/week','-1 kg/week']
+        self.plans=["Gain weight","Maintain weight","Mild weight loss","Weight loss","Extreme weight loss"]
+        self.weights=[1.2,1,0.9,0.8,0.6]
+        self.losses=['+0.25 kg/week','-0 kg/week','-0.25 kg/week','-0.5 kg/week','-1 kg/week']
         pass
 
     def display_bmi(self,person):
@@ -104,7 +104,7 @@ class Display:
         st.header('CALORIES CALCULATOR')        
         maintain_calories=person.calories_calculator()
         st.write('The results show a number of daily calorie estimates that can be used as a guideline for how many calories to consume each day to maintain, lose, or gain weight at a chosen rate.')
-        for plan,weight,loss,col in zip(self.plans,self.weights,self.losses,st.columns(4)):
+        for plan,weight,loss,col in zip(self.plans,self.weights,self.losses,st.columns(5)):
             with col:
                 st.metric(label=plan,value=f'{round(maintain_calories*weight)} Calories/day',delta=loss,delta_color="inverse")
 
