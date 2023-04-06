@@ -248,7 +248,7 @@ with st.form("recommendation_form"):
     height = st.number_input('Height(cm)',min_value=50, max_value=300, step=1)
     weight = st.number_input('Weight(kg)',min_value=10, max_value=300, step=1)
     gender = st.radio('Gender',('Male','Female'))
-    activity = st.select_slider('Activity',options=['Little/no exercise', 'Light exercise', 'Moderate exercise (3-5 days/wk)', 'Very active (6-7 days/wk)', 
+    activity = st.select_slider('Activity',options=['Little/no exercise (0-2 days/wk)', 'Light exercise', 'Moderate exercise (3-5 days/wk)', 'Very active (6-7 days/wk)', 
     'Extra active (very active & physical job)'])
     option = st.selectbox('Choose your weight loss plan:',display.plans)
     st.session_state.weight_loss_option=option
